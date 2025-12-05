@@ -23,12 +23,14 @@ export interface TenantFormData {
 }
 
 export interface RiskScoreResponse {
+  success: boolean;
+  applicant_id: string;
   risk_score: number;
   risk_category: 'LOW' | 'MEDIUM' | 'HIGH';
-  recommendation: 'APPROVE' | 'REQUEST_INFO' | 'REJECT';
-  confidence_score: number;
-  model_version: string;
-  inference_time_ms: number;
+  default_probability: number;
+  recommendation: string;
+  confidence: number;
+  reasoning: string;
 }
 
 export const defaultFormData: TenantFormData = {
@@ -52,5 +54,5 @@ export const defaultFormData: TenantFormData = {
   location: '',
   market_median_rent: 0,
   local_unemployment_rate: 5.0,
-  inflation_rate: 5.0,
+  inflation_rate: 3.0,
 };
