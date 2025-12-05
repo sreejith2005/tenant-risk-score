@@ -16,7 +16,7 @@ const Index = () => {
     setResult(null);
 
     try {
-      const response = await fetch('http://localhost:8001/api/score', {
+      const response = await fetch('https://88c2b9794cf8.ngrok-free.app/api/score', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
