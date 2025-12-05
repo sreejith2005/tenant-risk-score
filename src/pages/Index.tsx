@@ -30,11 +30,16 @@ const Index = () => {
       }
 
       const resultData: RiskScoreResponse = await response.json();
+      
+      if (!resultData.success) {
+        throw new Error('API returned unsuccessful response');
+      }
+      
       setResult(resultData);
       
       toast({
         title: 'Risk Assessment Complete',
-        description: `Score: ${resultData.risk_score} - ${resultData.risk_category} Risk`,
+        description: `Score: ${Math.round(resultData.risk_score)} - ${resultData.risk_category} Risk`,
       });
     } catch (error) {
       console.error('Error calculating risk:', error);
