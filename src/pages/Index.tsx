@@ -16,7 +16,7 @@ const Index = () => {
     setResult(null);
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/score', {
+      const response = await fetch('http://localhost:8001/api/score', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
