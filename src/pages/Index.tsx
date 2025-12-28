@@ -16,7 +16,7 @@ const Index = () => {
     setResult(null);
 
     try {
-      const response = await fetch('https://leaseth-mvp.onrender.com/api/score', {
+      const response = await fetch('https://sreejithm-leaseth-mvp.hf.space/api/score', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
